@@ -1,0 +1,20 @@
+<article class="class-card">
+  <h2>{{ name }}</h2>
+
+  <section>
+    <h3>Hit Die</h3>
+    <p>1d{{hit_die}}</p>
+  </section>
+  <section>
+    <h3>Saving Throws</h3>
+    <ul>
+      <li v-for="save in saving_throws">{{save.name}}</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Proficiencies</h3>
+    <ul>
+      <li v-for="proficiency in proficiencies">{{proficiency.name}}</li>
+    </ul>
+  </section>
+</article>

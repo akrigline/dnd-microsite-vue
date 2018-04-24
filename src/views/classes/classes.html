@@ -1,0 +1,10 @@
+<div>
+  <h1>Classes</h1>
+  <div class="grid">
+    <ClassCard
+      v-for="(item, key, index) in classList"
+      v-bind:key="index"
+      v-bind:index="key"
+      v-bind:name="item.name" />
+  </div>
+</div>
