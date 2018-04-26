@@ -1,0 +1,4 @@
+<select v-model="selected">
+  <option v-for="(race, key, index) in raceList"
+    v-bind:key="index">{{race.name}}</option>
+</select>

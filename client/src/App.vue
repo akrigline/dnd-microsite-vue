@@ -2,6 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Classes</router-link>
+      <router-link to="/creator">Creator</router-link>
     </div>
     <router-view/>
   </div>
