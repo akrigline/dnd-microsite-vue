@@ -4,7 +4,9 @@ const trimUrl = url => url.replace('http://www.dnd5eapi.co/api/', '')
 const creatorModule = {
   state: {
     race: null,
-    raceDetails: null
+    raceDetails: null,
+    languageSelections: [],
+    proficiencySelections: []
   },
   mutations: {
     changeRace (state, payload) {
@@ -12,6 +14,12 @@ const creatorModule = {
     },
     changeRaceDetails (state, payload) {
       state.raceDetails = payload
+    },
+    changeLanguageSelection (state, payload) {
+      state.languageSelections = payload
+    },
+    changeProficiencySelection (state, payload) {
+      state.proficiencySelections = payload
     }
   },
   actions: {

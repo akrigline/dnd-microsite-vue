@@ -3,8 +3,7 @@ export default {
   props: {
   },
   data: () => ({
-    'raceList': [],
-    'selected': null
+    'raceList': []
   }),
   created: function () {
     axios

@@ -1,36 +1,58 @@
-<div v-if="raceDetails">
-<header>
+<div v-if="raceDetails" class="">
+  <header>
     <h1>
       {{raceDetails.name}}
     </h1>
-</header>
-<section>
-    <h3>Size</h3>
-    {{raceDetails.size}}
-</section>
-<section>
-    <h3>Speed</h3>
-    {{raceDetails.speed}}
-</section>
-<section>
-    <h3>Starting Proficiencies</h3>
-    <ul v-if="raceDetails.starting_proficiencies.length > 0">
-      <li v-for="proficiency in raceDetails.starting_proficiencies">{{proficiency.name}}</li>
-    </ul>
-    <p v-else>None</p>
-</section>
-<section>
-    <h3>Languages</h3>
-    <ul v-if="raceDetails.languages.length > 0">
-      <li v-for="language in raceDetails.languages">{{language.name}}</li>
-    </ul>
-    <p v-else>None</p>
-</section>
-<section>
-    <h3>Traits</h3>
-    <ul v-if="raceDetails.traits.length > 0">
-      <li v-for="trait in raceDetails.traits">{{trait.name}}</li>
-    </ul>
-    <p v-else>None</p>
-</section>
+  </header>
+  <div class="row">
+    <section>
+      <h3>Size</h3>
+      {{raceDetails.size}}
+    </section>
+    <section>
+      <h3>Speed</h3>
+      {{raceDetails.speed}}
+    </section>
+  </div>
+  <div class="row">
+    <section>
+      <h3>Starting Proficiencies</h3>
+      <ul class="list" v-if="raceDetails.starting_proficiencies.length > 0">
+        <li v-for="proficiency in raceDetails.starting_proficiencies">{{proficiency.name}}</li>
+      </ul>
+      <p v-else>None</p>
+    </section>
+    <section>
+      <h3>Languages</h3>
+      <ul class="list" v-if="raceDetails.languages.length > 0">
+        <li v-for="language in raceDetails.languages">{{language.name}}</li>
+      </ul>
+      <p v-else>None</p>
+    </section>
+    <section>
+      <h3>Traits</h3>
+      <ul class="list" v-if="raceDetails.traits.length > 0">
+        <li v-for="trait in raceDetails.traits">{{trait.name}}</li>
+      </ul>
+      <p v-else>None</p>
+    </section>
+  </div>
+  <div class="row">
+    <section v-if="raceDetails.language_options">
+      <h3>Language Options</h3>
+      <select v-model="changeLanguage">
+        <option v-for="(language, key, index) in raceDetails.language_options.from"
+          v-bind:key="index"
+          v-bind:value="language.name">{{language.name}}</option>
+      </select>
+    </section>
+    <section v-if="raceDetails.starting_proficiency_options">
+      <h3>Starting Proficiency Options</h3>
+      <select v-model="changeProficiency">
+        <option v-for="(proficiency, key, index) in raceDetails.starting_proficiency_options.from"
+          v-bind:key="index"
+          v-bind:value="proficiency.name">{{proficiency.name}}</option>
+      </select>
+    </section>
+  </div>
 </div>
