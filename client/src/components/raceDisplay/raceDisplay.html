@@ -1,0 +1,36 @@
+<div v-if="raceDetails">
+<header>
+    <h1>
+      {{raceDetails.name}}
+    </h1>
+</header>
+<section>
+    <h3>Size</h3>
+    {{raceDetails.size}}
+</section>
+<section>
+    <h3>Speed</h3>
+    {{raceDetails.speed}}
+</section>
+<section>
+    <h3>Starting Proficiencies</h3>
+    <ul v-if="raceDetails.starting_proficiencies.length > 0">
+      <li v-for="proficiency in raceDetails.starting_proficiencies">{{proficiency.name}}</li>
+    </ul>
+    <p v-else>None</p>
+</section>
+<section>
+    <h3>Languages</h3>
+    <ul v-if="raceDetails.languages.length > 0">
+      <li v-for="language in raceDetails.languages">{{language.name}}</li>
+    </ul>
+    <p v-else>None</p>
+</section>
+<section>
+    <h3>Traits</h3>
+    <ul v-if="raceDetails.traits.length > 0">
+      <li v-for="trait in raceDetails.traits">{{trait.name}}</li>
+    </ul>
+    <p v-else>None</p>
+</section>
+</div>
